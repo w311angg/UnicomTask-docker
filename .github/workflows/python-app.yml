@@ -37,6 +37,6 @@ jobs:
           echo "$config"|base64 -d > ./config.json
       - name: Run
         env:
-          jmail: ${{ secrets.jmail }}
+          jmail: ${{ secrets.jmail_password }}
         run: |
           proxychains python -u index.py
