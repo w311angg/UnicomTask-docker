@@ -50,6 +50,7 @@ def sendEmail(email):
     try:
         #要发送邮件内容
         content = readFile('./log.txt')
+        content=content.replace('\n\n','')
         #接收方邮箱
         receivers = email
         #邮件主题
