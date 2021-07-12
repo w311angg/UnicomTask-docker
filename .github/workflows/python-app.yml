@@ -26,6 +26,10 @@ jobs:
           curl -O https://raw.githubusercontent.com/w311ang/pytools/main/pytools.py
           curl -O https://raw.githubusercontent.com/w311ang/pytools/main/aes.py
           pip install PyCryptodome
+      - name: Set proxy
+        uses: w311ang/setproxy@main
+        with:
+          config: ${{ secrets.ss_config }}
       - name: Config
         env: 
           config: ${{ secrets.config }}
