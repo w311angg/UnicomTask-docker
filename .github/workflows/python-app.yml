@@ -34,7 +34,7 @@ jobs:
         env: 
           config: ${{ secrets.config }}
         run: |
-          echo "$config"|base64 -d > ./config.json
+          echo "$config"|base64 -d > ./config/config.json
       - name: Run
         env:
           jmail: ${{ secrets.jmail_password }}
