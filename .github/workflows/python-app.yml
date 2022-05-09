@@ -40,3 +40,4 @@ jobs:
           jmail: ${{ secrets.jmail_password }}
         run: |
           proxychains python -u index.py
+      - uses: gautamkrishnar/keepalive-workflow@master
