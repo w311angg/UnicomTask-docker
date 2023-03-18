@@ -49,7 +49,7 @@ jobs:
         env:
           jmail: ${{ secrets.jmail_password }}
         run: |
-          proxychains python -u index.py | tee /tmp/UnicomTask.log
+          proxychains python -u index.py
           grep '^Traceback (most recent call last):$' /tmp/UnicomTask.log >/dev/null
           echo $?
           grep '^Traceback (most recent call last):$' /tmp/UnicomTask.log >/dev/null && exit 1
