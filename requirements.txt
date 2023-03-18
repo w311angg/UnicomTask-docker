@@ -5,3 +5,4 @@ lxml==4.6.2
 rsa==4.5
 git+https://github.com/w311ang/pytools.git@package
 PyCryptodome
+httpx
