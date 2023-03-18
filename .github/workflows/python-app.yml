@@ -35,6 +35,7 @@ jobs:
       - name: Config
         env: 
           config: ${{ secrets.config }}
+          jmail: ${{ secrets.jmail_password }}
         run: |
           python -c "from pytools.pytools import secretlog; import os; print(secretlog(os.getenv('config')))"
           echo "$config"|base64 -d > ./config/config.json
