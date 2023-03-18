@@ -49,8 +49,6 @@ jobs:
         env:
           jmail: ${{ secrets.jmail_password }}
         run: |
-          proxychains python -u index.py
-          grep '^Traceback (most recent call last):$' /tmp/UnicomTask.log >/dev/null
-          echo $?
-          grep '^Traceback (most recent call last):$' /tmp/UnicomTask.log >/dev/null && exit 1
+          proxychains python -u index.py | tee /tmp/UnicomTask.log
+          grep '^Traceback (most recent call last):$' /tmp/UnicomTask.log >/dev/null && exit 1; true
       - uses: gautamkrishnar/keepalive-workflow@master
